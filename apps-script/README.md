@@ -1,66 +1,60 @@
 # Apps Script — synchronisation Biodiversité
 
-Le script synchronise les événements du fichier GitHub `data/biodiversite.json` vers le calendrier Google **Biodiversité**.
+Le script synchronise `data/biodiversite.json` vers le calendrier Google **Biodiversité**.
 
 ## Principes de sécurité
 
 - aucune suppression automatique ;
-- aucun événement terminé n'est modifié ;
+- aucun événement terminé déjà présent n'est modifié visiblement ;
 - le libellé d'un événement existant n'est jamais réécrit ;
-- la section `── Notes personnelles ──` est préservée ;
-- seuls les événements créés par le système et portant la propriété privée `biodiversiteSyncId` sont gérés ;
-- avant toute vraie synchronisation, `previewSync()` permet de voir exactement ce qui serait créé ou modifié.
+- les notes personnelles sont préservées ;
+- les anciens événements importés peuvent être **adoptés** grâce à leur `legacy_uid` iCalendar, sans modification visible ;
+- `previewSync()` permet de contrôler toutes les actions avant écriture.
 
-## Installation / mise à jour
+## Mise à jour du projet Apps Script
 
-1. Connecte-toi à Apps Script avec le compte Google associé à `automatisation@de-piedoue.fr`.
-2. Ouvre le projet **Biodiversité Sync**.
-3. Vérifie que **Google Calendar API** est ajouté dans **Services**.
+1. Connecte-toi avec le compte Google associé à `automatisation@de-piedoue.fr`.
+2. Ouvre **Biodiversité Sync**.
+3. Vérifie que **Google Calendar API** est présent dans **Services**.
 4. Remplace `Code.gs` par la version du dépôt.
-5. Affiche le fichier manifeste `appsscript.json` dans les paramètres du projet et remplace son contenu par la version du dépôt.
+5. Vérifie aussi `appsscript.json`.
 6. Enregistre.
 
-Le manifeste demande :
-- lecture des agendas accessibles (`calendar.readonly`) ;
-- lecture/écriture des événements (`calendar.events`) ;
-- lecture HTTPS du JSON GitHub (`script.external_request`).
-
-Il ne demande pas le scope complet `calendar`.
-
-## Ordre de test recommandé
+## Ordre recommandé
 
 ### 1. `diagnostic()`
 
-Vérifie :
-- l'accès en écriture au calendrier **Biodiversité** ;
-- la présence des libellés : À surveiller, À envisager, Inscrit, Participé, Manqué, Annulé ;
-- l'accès à `data/biodiversite.json`.
-
-Aucune écriture.
+Vérifie l'accès au calendrier, les six libellés et le JSON GitHub. Aucune écriture.
 
 ### 2. `previewSync()`
 
-Affiche dans le journal :
-- `[CRÉER]` pour les nouveaux événements ;
-- `[METTRE À JOUR]` pour les événements futurs déjà gérés ;
-- `[IDENTIQUE]` si rien ne change ;
-- `[IGNORÉ — PASSÉ]` pour les événements terminés.
+Le journal peut afficher :
+
+- `[ADOPTER]` : événement déjà présent retrouvé par son ancien UID iCalendar ;
+- `[CRÉER]` : événement absent à créer ;
+- `[METTRE À JOUR]` : événement futur déjà géré dont un champ public a changé ;
+- `[IDENTIQUE]` : aucune différence ;
+- `[IGNORÉ — PASSÉ]` : événement terminé déjà adopté.
 
 Aucune écriture.
 
 ### 3. `syncBiodiversite()`
 
-Effectue réellement les créations et mises à jour annoncées par l'aperçu.
+- une adoption ajoute seulement la propriété privée `biodiversiteSyncId` ;
+- une création applique `initial_label` ;
+- les événements existants importés avec `managed_fields` ne laissent au script modifier que les champs explicitement listés.
 
-## Gestion des libellés
+Après une première synchronisation de migration, relance `previewSync()` : les événements historiques adoptés doivent apparaître comme passés/ignorés, tandis que les événements futurs sont comparés normalement.
 
-`initial_label` dans le JSON sert uniquement lors de la création d'un nouvel événement. Ensuite, le libellé Google devient une donnée personnelle : le script ne le modifie plus.
+## Libellés
 
-Exemples : `À surveiller`, `À envisager`, `Inscrit`, `Participé`, `Manqué`, `Annulé`.
+`initial_label` n'est utilisé qu'à la création. Ensuite, le libellé Google est sous ton contrôle et n'est jamais remplacé automatiquement.
+
+Libellés actuels : **À surveiller, À envisager, Inscrit, Participé, Manqué, Annulé**.
 
 ## Notes personnelles
 
-La description est structurée ainsi :
+Pour les nouveaux événements créés par le script, la description prend la forme :
 
 ```text
 ── Informations veille ──
@@ -75,4 +69,4 @@ Description publique...
 Tes propres notes...
 ```
 
-Lors d'une mise à jour, seule la partie **Informations veille** est régénérée ; la partie **Notes personnelles** est conservée.
+La partie **Notes personnelles** est conservée lors des mises à jour.
