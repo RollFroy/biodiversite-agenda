@@ -10,7 +10,7 @@
       "start": { "dateTime": "2026-09-02T10:00:00+02:00" },
       "end": { "dateTime": "2026-09-02T17:00:00+02:00" },
       "location": "47,2477420, 0,2214600",
-      "initial_label": "À surveiller",
+      "initial_label": "Participé",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -25,21 +25,7 @@
       "priority": "haute",
       "organizer": "LPO Centre-Val de Loire",
       "source_url": "https://www.lpo.fr/lpo-locales/lpo-centre-val-de-loire/actu-centre-val-de-loire/actu-2026-lpo-cvdl/rejoignez-l-ecole-d-ornithologie-!-45",
-      "description": "Formation LPO de 5 jours : identification visuelle et auditive, écologie, méthode d’identification, recueil de données et sciences participatives. Très forte valeur pour la reconversion."
-    },
-    {
-      "id": "cnpf-faune-forestiere-cher-2026-09-11",
-      "legacy_uid": "0a67c188-233e-477e-bfd9-eb0552c79464@openai.local",
-      "title": "CNPF – Gestion de la faune forestière : réguler, préserver",
-      "start": { "date": "2026-09-11" },
-      "end": { "date": "2026-09-12" },
-      "location": "Cher (18)",
-      "initial_label": "Manqué",
-      "type": "réunion_information",
-      "priority": "faible",
-      "organizer": "CNPF",
-      "source_url": "https://ifc.cnpf.fr/se-former-s-informer/nos-evenements/les-reunions-forestieres",
-      "description": "Réunion forestière CNPF sur l’interface faune, sylviculture et régénération."
+      "description": "Formation LPO de 5 jours : identification visuelle et auditive, écologie, méthode d’identification, recueil de données et sciences participatives. À replanifier si une nouvelle session accessible est proposée."
     },
     {
       "id": "fogefor-bfc-web-1-2026-09-15",
@@ -48,7 +34,7 @@
       "start": { "dateTime": "2026-09-15T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-15T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "À surveiller",
+      "initial_label": "Participé",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -58,7 +44,7 @@
       "start": { "date": "2026-09-18" },
       "end": { "date": "2026-09-19" },
       "location": "Essonne (91)",
-      "initial_label": "À surveiller",
+      "initial_label": "Participé",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -68,7 +54,7 @@
       "start": { "dateTime": "2026-09-18T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-18T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "À surveiller",
+      "initial_label": "Participé",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -78,7 +64,7 @@
       "start": { "dateTime": "2026-09-23T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-23T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "À surveiller",
+      "initial_label": "Participé",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -88,22 +74,21 @@
       "start": { "dateTime": "2026-09-25T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-25T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "À surveiller",
+      "initial_label": "Participé",
       "managed_fields": ["start", "end", "location"]
     },
     {
-      "id": "fogefor-sols-yssingeaux-2026-09-29",
-      "legacy_uid": "f3e993db-8440-4cd0-9008-7dda55de2e45@openai.local",
-      "title": "FOGEFOR – Comprendre le fonctionnement des sols forestiers",
-      "start": { "date": "2026-09-29" },
-      "end": { "date": "2026-09-30" },
-      "location": "Yssingeaux (43)",
-      "initial_label": "Manqué",
-      "type": "formation",
+      "id": "lpo-hibernaculum-dardilly-2026-09-30",
+      "title": "LPO Rhône – création d’un hibernaculum",
+      "start": { "date": "2026-09-30" },
+      "end": { "date": "2026-10-01" },
+      "location": "Dardilly (69)",
+      "initial_label": "Participé",
+      "type": "chantier_nature",
       "priority": "haute",
-      "organizer": "CNPF",
-      "source_url": "https://auvergnerhonealpes.cnpf.fr/se-former-s-informer/nos-evenements/stage-fogefor-la-gestion-forestiere",
-      "description": "Journée FOGEFOR sur le fonctionnement des sols forestiers et le diagnostic sol → station → végétation → gestion."
+      "organizer": "LPO Rhône",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/agenda/",
+      "description": "Chantier de création d’un hibernaculum. Participation effective."
     },
     {
       "id": "lpo-noctules-tete-or-2026-10-01",
@@ -117,49 +102,33 @@
       "priority": "haute",
       "organizer": "LPO Rhône",
       "source_url": "https://auvergne-rhone-alpes.lpo.fr/agenda/",
-      "description": "Suivi chronologique des Noctules communes au Parc de la Tête d’Or. L’événement du 1er octobre 2026 a été annulé par la LPO."
+      "description": "Suivi chronologique des Noctules communes au Parc de la Tête d’Or. L’événement du 1er octobre 2026 a été annulé par la LPO ; à replanifier si une nouvelle session est proposée."
     },
     {
-      "id": "cnpf-pepiniere-genetique-rhone-ouest-2026-10-09",
-      "legacy_uid": "a1e0c3c9-8c15-457b-9ceb-3e56a996976a@openai.local",
-      "title": "CNPF Rhône Ouest – pépinière forestière et génétique",
-      "start": { "date": "2026-10-09" },
-      "end": { "date": "2026-10-10" },
-      "location": "Rhône Ouest – lieu précis à confirmer",
+      "id": "arthropologia-recolte-moi-si-tu-peux-cloture-2026-10-03",
+      "title": "ARTHROPOLOGIA – Récolte-moi si tu peux ! – séance de clôture",
+      "start": { "dateTime": "2026-10-03T09:30:00+02:00" },
+      "end": { "dateTime": "2026-10-03T12:30:00+02:00" },
+      "location": "Écocentre du Lyonnais, 60 chemin du Jacquemet, 69890 La Tour-de-Salvagny",
+      "initial_label": "Participé",
+      "type": "atelier_naturaliste",
+      "priority": "haute",
+      "organizer": "ARTHROPOLOGIA / Graines de Bio-Divers-Cité",
+      "source_url": "https://www.arthropologia.org/blog/recolte-moi-si-tu-peux-",
+      "description": "Séance de clôture du cycle autour de la récolte de graines sauvages, avec partage de graines, balades et ateliers. Participation effective."
+    },
+    {
+      "id": "lpo-rhone-rencontre-eau-douce-2026-10-06",
+      "title": "Rencontres LPO Rhône – Régénérer les cycles de l’eau douce pour des territoires résilients",
+      "start": { "dateTime": "2026-10-06T19:00:00+02:00" },
+      "end": { "dateTime": "2026-10-06T22:00:00+02:00" },
+      "location": "Maison de l’Environnement, 14 avenue Tony-Garnier, Lyon 7e",
       "initial_label": "À envisager",
-      "type": "réunion_information",
-      "priority": "haute",
-      "organizer": "CNPF",
-      "source_url": "https://auvergnerhonealpes.cnpf.fr/evenements/reunion-d-information-rhone-ouest-visite-d-une-pepiniere-forestiere-genetique",
-      "description": "Visite d’une pépinière forestière : matériel végétal, provenance et génétique."
-    },
-    {
-      "id": "cnpf-nouvelles-essences-rhone-2026-10-16",
-      "legacy_uid": "a2b8edd6-f59a-4d57-8c76-e1028c5429f3@openai.local",
-      "title": "CNPF Rhône – nouvelles essences face au changement climatique",
-      "start": { "date": "2026-10-16" },
-      "end": { "date": "2026-10-17" },
-      "location": "Rhône Nord et Centre – lieu précis à confirmer",
-      "initial_label": "À surveiller",
-      "type": "réunion_information",
-      "priority": "faible",
-      "organizer": "CNPF",
-      "source_url": "https://auvergnerhonealpes.cnpf.fr/evenements/reunion-d-information-rhone-nord-et-centre-nouvelles-essences-face-au-changement",
-      "description": "Réunion CNPF sur les nouvelles essences et l’adaptation au changement climatique."
-    },
-    {
-      "id": "ofb-loup-lynx-aura-2026-10-21",
-      "legacy_uid": "b5f1c8bf-592e-4035-a531-289ef6c7089f@openai.local",
-      "title": "OFB – Correspondant réseau Loup-Lynx AURA",
-      "start": { "date": "2026-10-21" },
-      "end": { "date": "2026-10-23" },
-      "location": "Auvergne-Rhône-Alpes – lieu à confirmer",
-      "initial_label": "Manqué",
-      "type": "formation",
-      "priority": "haute",
-      "organizer": "OFB",
-      "source_url": "https://formation.ofb.fr/offre-formation/sessions-ouvertes/correspondant-reseau-loup-lynx-aura-date-limite-inscription",
-      "description": "Formation OFB de 2 jours sur le réseau Loup-Lynx : fonctionnement du réseau, biologie, indices de présence et ateliers pratiques. Date limite d’inscription : 20 septembre 2026."
+      "type": "rencontre_associative",
+      "priority": "normale",
+      "organizer": "LPO Rhône",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/rhone/agenda/",
+      "description": "Rencontre mensuelle de la LPO du Rhône. Intérêt réel mais déplacement à Lyon à mettre en balance avec la fatigue et la route."
     },
     {
       "id": "fogefor-bfc-terrain-2026-11-05",
@@ -168,7 +137,7 @@
       "start": { "date": "2026-11-05" },
       "end": { "date": "2026-11-07" },
       "location": "Secteur d’Auxonne (21/39) – lieu précis à confirmer",
-      "initial_label": "À surveiller",
+      "initial_label": "Inscrit",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -180,6 +149,16 @@
       "location": "Ambérieu-en-Bugey (01)",
       "initial_label": "À surveiller",
       "managed_fields": ["start", "end", "location"]
+    }
+  ],
+  "watch_items": [
+    {
+      "id": "lpo-rhone-etude-blaireau-2026-2027",
+      "title": "LPO Rhône – étude Blaireau 2026–2027",
+      "status": "à_suivre",
+      "priority": "haute",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/benevolat-participer-a-letude-blaireau-2026-2027-dans-le-rhone/",
+      "note": "Ouvert à tous niveaux ; formations prévues ; prospection de terriers et comptages. À convertir en événement dès qu’une date et un secteur compatibles autour de Tarare sont annoncés."
     }
   ]
 }
