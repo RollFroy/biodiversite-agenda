@@ -34,7 +34,7 @@
       "start": { "dateTime": "2026-09-15T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-15T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "Participé",
+      "initial_label": "Inscrit",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -44,7 +44,7 @@
       "start": { "date": "2026-09-18" },
       "end": { "date": "2026-09-19" },
       "location": "Essonne (91)",
-      "initial_label": "Participé",
+      "initial_label": "À surveiller",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -54,7 +54,7 @@
       "start": { "dateTime": "2026-09-18T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-18T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "Participé",
+      "initial_label": "Inscrit",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -64,7 +64,7 @@
       "start": { "dateTime": "2026-09-23T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-23T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "Participé",
+      "initial_label": "Inscrit",
       "managed_fields": ["start", "end", "location"]
     },
     {
@@ -74,7 +74,7 @@
       "start": { "dateTime": "2026-09-25T17:00:00+02:00" },
       "end": { "dateTime": "2026-09-25T19:00:00+02:00" },
       "location": "En ligne",
-      "initial_label": "Participé",
+      "initial_label": "Inscrit",
       "managed_fields": ["start", "end", "location"]
     },
     {
