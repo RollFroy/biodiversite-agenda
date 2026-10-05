@@ -14,9 +14,6 @@ const CONFIG = {
   ],
 };
 
-/**
- * Diagnostic sans écriture dans Google Agenda.
- */
 function diagnostic() {
   const calendar = getTargetCalendar_();
   const labels = getLabelMap_(calendar.id);
@@ -32,24 +29,10 @@ function diagnostic() {
   console.log('Diagnostic terminé : aucune donnée n’a été modifiée.');
 }
 
-/**
- * Simule la synchronisation et écrit seulement le plan d'action dans le journal.
- * Aucune modification n'est effectuée.
- */
 function previewSync() {
   runSync_(true);
 }
 
-/**
- * Synchronise les événements du JSON GitHub vers le calendrier Biodiversité.
- *
- * Règles de sécurité :
- * - ne supprime jamais d'événement ;
- * - ne modifie jamais un événement terminé ;
- * - ne modifie jamais le libellé d'un événement existant ;
- * - préserve la section "Notes personnelles" ;
- * - ne gère que les événements portant notre propriété privée de synchronisation.
- */
 function syncBiodiversite() {
   runSync_(false);
 }
@@ -61,6 +44,7 @@ function runSync_(dryRun) {
   validateData_(data, labels);
 
   const stats = {
+    adopt: 0,
     create: 0,
     update: 0,
     unchanged: 0,
@@ -68,7 +52,21 @@ function runSync_(dryRun) {
   };
 
   data.events.forEach(sourceEvent => {
-    const existing = findManagedEvent_(calendar.id, sourceEvent.id);
+    let existing = findManagedEvent_(calendar.id, sourceEvent.id);
+
+    if (!existing && sourceEvent.legacy_uid) {
+      const legacy = findLegacyEvent_(calendar.id, sourceEvent.legacy_uid);
+      if (legacy) {
+        stats.adopt++;
+        if (dryRun) {
+          console.log('[ADOPTER] ' + legacy.summary + ' (' + sourceEvent.id + ')');
+        } else {
+          adoptLegacyEvent_(calendar.id, legacy, sourceEvent.id);
+          console.log('[ADOPTÉ] ' + legacy.summary + ' (' + sourceEvent.id + ')');
+        }
+        return;
+      }
+    }
 
     if (!existing) {
       stats.create++;
@@ -113,7 +111,8 @@ function runSync_(dryRun) {
 
   console.log(
     (dryRun ? 'APERÇU' : 'SYNCHRO') +
-    ' terminé — créations: ' + stats.create +
+    ' terminé — adoptions: ' + stats.adopt +
+    ', créations: ' + stats.create +
     ', mises à jour: ' + stats.update +
     ', identiques: ' + stats.unchanged +
     ', passés ignorés: ' + stats.past + '.'
@@ -138,8 +137,7 @@ function getTargetCalendar_() {
 
   if (matches.length > 1) {
     throw new Error(
-      'Plusieurs calendriers portent le nom "' + CONFIG.calendarName +
-      '". Utilise leur ID pour lever l\'ambiguïté.'
+      'Plusieurs calendriers portent le nom "' + CONFIG.calendarName + '".'
     );
   }
 
@@ -154,9 +152,7 @@ function getLabelMap_(calendarId) {
 
   const labels = {};
   eventLabels.forEach(label => {
-    if (label.name) {
-      labels[label.name] = label;
-    }
+    if (label.name) labels[label.name] = label;
   });
 
   const missingLabels = CONFIG.expectedLabels.filter(name => !labels[name]);
@@ -185,19 +181,20 @@ function validateData_(data, labels) {
   if (data.schema_version !== 1) {
     throw new Error('schema_version inattendu : ' + data.schema_version);
   }
-
   if (data.calendar !== CONFIG.calendarName) {
     throw new Error(
       'Le JSON vise le calendrier "' + data.calendar +
       '" au lieu de "' + CONFIG.calendarName + '".'
     );
   }
-
   if (!Array.isArray(data.events)) {
     throw new Error('Le champ events doit être un tableau.');
   }
 
   const ids = new Set();
+  const allowedManagedFields = new Set([
+    'title', 'start', 'end', 'location', 'description'
+  ]);
 
   data.events.forEach((event, index) => {
     const prefix = 'events[' + index + ']';
@@ -219,9 +216,18 @@ function validateData_(data, labels) {
 
     const initialLabel = event.initial_label || 'À surveiller';
     if (!labels[initialLabel]) {
-      throw new Error(
-        prefix + ' : initial_label inconnu : ' + initialLabel
-      );
+      throw new Error(prefix + ' : initial_label inconnu : ' + initialLabel);
+    }
+
+    if (event.managed_fields) {
+      if (!Array.isArray(event.managed_fields)) {
+        throw new Error(prefix + ' : managed_fields doit être un tableau.');
+      }
+      event.managed_fields.forEach(field => {
+        if (!allowedManagedFields.has(field)) {
+          throw new Error(prefix + ' : managed_field inconnu : ' + field);
+        }
+      });
     }
   });
 }
@@ -235,9 +241,7 @@ function validateDateEndpoint_(endpoint, fieldName) {
   const hasDateTime = typeof endpoint.dateTime === 'string';
 
   if (hasDate === hasDateTime) {
-    throw new Error(
-      fieldName + ' doit contenir exactement date OU dateTime.'
-    );
+    throw new Error(fieldName + ' doit contenir exactement date OU dateTime.');
   }
 
   if (hasDate && !/^\d{4}-\d{2}-\d{2}$/.test(endpoint.date)) {
@@ -258,15 +262,42 @@ function findManagedEvent_(calendarId, syncId) {
   });
 
   const items = result.items || [];
-
   if (items.length > 1) {
     throw new Error(
-      'Plusieurs événements Google portent le même identifiant de synchro : ' +
-      syncId
+      'Plusieurs événements portent le même identifiant de synchro : ' + syncId
     );
   }
-
   return items.length === 1 ? items[0] : null;
+}
+
+function findLegacyEvent_(calendarId, legacyUid) {
+  const result = Calendar.Events.list(calendarId, {
+    iCalUID: legacyUid,
+    showDeleted: false,
+    singleEvents: true,
+    maxResults: 2,
+  });
+
+  const items = result.items || [];
+  if (items.length > 1) {
+    throw new Error('Plusieurs événements portent le même UID iCalendar : ' + legacyUid);
+  }
+  return items.length === 1 ? items[0] : null;
+}
+
+function adoptLegacyEvent_(calendarId, event, syncId) {
+  const privateProps = Object.assign(
+    {},
+    (event.extendedProperties && event.extendedProperties.private) || {}
+  );
+  privateProps[CONFIG.syncProperty] = syncId;
+
+  Calendar.Events.patch(
+    { extendedProperties: { private: privateProps } },
+    calendarId,
+    event.id,
+    { sendUpdates: 'none' }
+  );
 }
 
 function createManagedEvent_(calendarId, sourceEvent, labels) {
@@ -276,17 +307,13 @@ function createManagedEvent_(calendarId, sourceEvent, labels) {
     start: normalizeDateEndpoint_(sourceEvent.start),
     end: normalizeDateEndpoint_(sourceEvent.end),
     description: buildManagedDescription_(sourceEvent, ''),
-    extendedProperties: {
-      private: {},
-    },
+    extendedProperties: { private: {} },
     eventLabelId: labels[initialLabel].id,
   };
 
   resource.extendedProperties.private[CONFIG.syncProperty] = sourceEvent.id;
 
-  if (sourceEvent.location) {
-    resource.location = sourceEvent.location;
-  }
+  if (sourceEvent.location) resource.location = sourceEvent.location;
 
   Calendar.Events.insert(resource, calendarId, {
     eventLabelVersion: 1,
@@ -297,65 +324,66 @@ function createManagedEvent_(calendarId, sourceEvent, labels) {
 function buildPatch_(sourceEvent, existing) {
   const resource = {};
   const changedFields = [];
+  const managed = new Set(
+    sourceEvent.managed_fields ||
+    ['title', 'start', 'end', 'location', 'description']
+  );
 
-  if ((existing.summary || '') !== sourceEvent.title) {
+  if (managed.has('title') && (existing.summary || '') !== sourceEvent.title) {
     resource.summary = sourceEvent.title;
     changedFields.push('titre');
   }
 
-  const desiredLocation = sourceEvent.location || '';
-  if ((existing.location || '') !== desiredLocation) {
-    resource.location = desiredLocation;
-    changedFields.push('lieu');
+  if (managed.has('location')) {
+    const desiredLocation = sourceEvent.location || '';
+    if ((existing.location || '') !== desiredLocation) {
+      resource.location = desiredLocation;
+      changedFields.push('lieu');
+    }
   }
 
-  const desiredStart = normalizeDateEndpoint_(sourceEvent.start);
-  if (!sameDateEndpoint_(desiredStart, existing.start)) {
-    resource.start = desiredStart;
-    changedFields.push('début');
+  if (managed.has('start')) {
+    const desiredStart = normalizeDateEndpoint_(sourceEvent.start);
+    if (!sameDateEndpoint_(desiredStart, existing.start)) {
+      resource.start = desiredStart;
+      changedFields.push('début');
+    }
   }
 
-  const desiredEnd = normalizeDateEndpoint_(sourceEvent.end);
-  if (!sameDateEndpoint_(desiredEnd, existing.end)) {
-    resource.end = desiredEnd;
-    changedFields.push('fin');
+  if (managed.has('end')) {
+    const desiredEnd = normalizeDateEndpoint_(sourceEvent.end);
+    if (!sameDateEndpoint_(desiredEnd, existing.end)) {
+      resource.end = desiredEnd;
+      changedFields.push('fin');
+    }
   }
 
-  const desiredDescription = buildManagedDescription_(
-    sourceEvent,
-    existing.description || ''
-  );
-
-  if ((existing.description || '') !== desiredDescription) {
-    resource.description = desiredDescription;
-    changedFields.push('informations veille');
+  if (managed.has('description')) {
+    const desiredDescription = buildManagedDescription_(
+      sourceEvent,
+      existing.description || ''
+    );
+    if ((existing.description || '') !== desiredDescription) {
+      resource.description = desiredDescription;
+      changedFields.push('informations veille');
+    }
   }
 
   return { resource, changedFields };
 }
 
 function normalizeDateEndpoint_(endpoint) {
-  if (endpoint.date) {
-    return { date: endpoint.date };
-  }
+  if (endpoint.date) return { date: endpoint.date };
 
   const result = { dateTime: endpoint.dateTime };
-  if (endpoint.timeZone) {
-    result.timeZone = endpoint.timeZone;
-  }
+  if (endpoint.timeZone) result.timeZone = endpoint.timeZone;
   return result;
 }
 
 function sameDateEndpoint_(desired, existing) {
   if (!existing) return false;
-
-  if (desired.date) {
-    return desired.date === existing.date;
-  }
-
-  if (!existing.dateTime) {
-    return false;
-  }
+  if (desired.date) return desired.date === existing.date;
+  if (!existing.dateTime) return false;
 
   return (
     new Date(desired.dateTime).getTime() ===
@@ -373,7 +401,7 @@ function isEnded_(event) {
   if (event.end.date) {
     const today = Utilities.formatDate(
       new Date(),
-      CONFIG_TIMEZONE_(),
+      Session.getScriptTimeZone() || 'Europe/Paris',
       'yyyy-MM-dd'
     );
     return event.end.date <= today;
@@ -382,25 +410,13 @@ function isEnded_(event) {
   return false;
 }
 
-function CONFIG_TIMEZONE_() {
-  return Session.getScriptTimeZone() || 'Europe/Paris';
-}
-
 function buildManagedDescription_(sourceEvent, currentDescription) {
   const lines = [CONFIG.managedInfoHeader];
 
-  if (sourceEvent.type) {
-    lines.push('Type : ' + sourceEvent.type);
-  }
-  if (sourceEvent.organizer) {
-    lines.push('Organisme : ' + sourceEvent.organizer);
-  }
-  if (sourceEvent.priority) {
-    lines.push('Priorité : ' + sourceEvent.priority);
-  }
-  if (sourceEvent.source_url) {
-    lines.push('Source : ' + sourceEvent.source_url);
-  }
+  if (sourceEvent.type) lines.push('Type : ' + sourceEvent.type);
+  if (sourceEvent.organizer) lines.push('Organisme : ' + sourceEvent.organizer);
+  if (sourceEvent.priority) lines.push('Priorité : ' + sourceEvent.priority);
+  if (sourceEvent.source_url) lines.push('Source : ' + sourceEvent.source_url);
   if (sourceEvent.description) {
     lines.push('');
     lines.push(sourceEvent.description);
@@ -419,10 +435,7 @@ function extractPersonalNotes_(description) {
   if (!description) return '';
 
   const markerIndex = description.indexOf(CONFIG.personalNotesMarker);
-
   if (markerIndex === -1) {
-    // Garde-fou : si le marqueur a été supprimé manuellement,
-    // on conserve tout le texte existant au lieu de le perdre.
     return description.trim();
   }
 
