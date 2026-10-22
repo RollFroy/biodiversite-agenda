@@ -199,6 +199,23 @@
       "description": "Rencontre mensuelle de la LPO du Rhône. Intérêt réel mais déplacement à Lyon à mettre en balance avec la fatigue et la route."
     },
     {
+      "id": "villeurbanne-mare-edouard-glissant-2026-10-31",
+      "title": "LPO / Villeurbanne – restauration d’une mare au parc Édouard-Glissant",
+      "start": {
+        "dateTime": "2026-10-31T09:00:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-10-31T17:00:00+01:00"
+      },
+      "location": "Square Édouard-Glissant, rue Colin, 69100 Villeurbanne",
+      "initial_label": "Inscrit",
+      "type": "chantier_nature",
+      "priority": "haute",
+      "organizer": "Ville de Villeurbanne / LPO AuRA",
+      "source_url": "https://openagenda.com/fr/villeurbanne/events/99556782_creation-dune-nouvelle-mare",
+      "description": "Journée écovolontaire gratuite, réservée aux adultes sur inscription. Restauration de mare : selon l’avancement des travaux du 24 octobre, la journée du 31 pourrait être surtout consacrée à la clôture. Inscription confirmée par l’utilisateur."
+    },
+    {
       "id": "fogefor-bfc-terrain-2026-11-05",
       "legacy_uid": "2d1ccfc0-0f77-4ec7-a24b-063942e2f564@openai.local",
       "title": "FOGEFOR BFC – journées terrain",
@@ -252,6 +269,23 @@
       "description": "Réunion de lancement de l’étude Blaireau 2026-2027 : accueil à 18 h, réunion-information et formation dès 19 h. Inscription à l’étude effectuée, participation prévue. Du 12 au 16 novembre, possible MISPE en journée ; compatible avec disponibilité après 16 h 45 selon trajet."
     },
     {
+      "id": "lpo-popamphibien-webinaire-2026-11-17",
+      "title": "LPO AuRA – Webinaire POPAmphibien",
+      "start": {
+        "dateTime": "2026-11-17T18:30:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-11-17T20:00:00+01:00"
+      },
+      "location": "En ligne",
+      "initial_label": "Inscrit",
+      "type": "formation_naturaliste",
+      "priority": "haute",
+      "organizer": "LPO Auvergne-Rhône-Alpes",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
+      "description": "Webinaire présentant le protocole national de suivi des amphibiens. Inscription effectuée. Horaire confirmé par l’utilisateur via la fiche LPO ; compatible avec la MISPE finissant à 16 h 45."
+    },
+    {
       "id": "ecole-eau-chartreuse-guiers-intro-2026-11-20",
       "title": "[INSCRIT] École de l’eau Chartreuse-Guiers – conférence introductive",
       "start": {
@@ -267,6 +301,23 @@
       "organizer": "SIAGA / Les Amis du Parc de Chartreuse",
       "source_url": "https://www.amis-chartreuse.org/spip.php?date_cal=2026-11-20&page=agenda",
       "description": "Conférence inaugurale gratuite et accessible aux débutants, prérequis pour le parcours 2027. Inscription effectuée. Visioconférence possible et recommandée depuis Tarare ; suite du parcours entre février et mai 2027. Horaire compatible avec l’éventuelle MISPE."
+    },
+    {
+      "id": "lpo-popreptile-webinaire-2026-11-24",
+      "title": "LPO AuRA – Webinaire POPReptile",
+      "start": {
+        "dateTime": "2026-11-24T18:30:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-11-24T20:00:00+01:00"
+      },
+      "location": "En ligne",
+      "initial_label": "Inscrit",
+      "type": "formation_naturaliste",
+      "priority": "haute",
+      "organizer": "LPO Auvergne-Rhône-Alpes",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
+      "description": "Webinaire présentant le protocole national de suivi des reptiles. Inscription effectuée. Horaire confirmé par l’utilisateur via la fiche LPO."
     }
   ],
   "watch_items": [
