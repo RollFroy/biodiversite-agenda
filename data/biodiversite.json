@@ -318,6 +318,23 @@
       "organizer": "LPO Auvergne-Rhône-Alpes",
       "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
       "description": "Webinaire présentant le protocole national de suivi des reptiles. Inscription effectuée. Horaire confirmé par l’utilisateur via la fiche LPO."
+    },
+    {
+      "id": "villeurbanne-mare-ancien-cimetiere-2026-11-25",
+      "title": "Création d’une mare – ancien cimetière de Villeurbanne (LPO AuRA)",
+      "start": {
+        "dateTime": "2026-11-25T09:00:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-11-25T17:00:00+01:00"
+      },
+      "location": "Ancien cimetière de Villeurbanne, 1 rue du Cimetière, 69100 Villeurbanne",
+      "initial_label": "À envisager",
+      "type": "chantier_nature",
+      "priority": "haute",
+      "organizer": "Ville de Villeurbanne / LPO Auvergne-Rhône-Alpes",
+      "source_url": "https://openagenda.com/fr/villeurbanne/events/20258613_creation-dune-mare-refuge-pour-la-biodiversite",
+      "description": "Chantier participatif de création d’une mare dans le cadre du Refuge LPO : creusage manuel, géotextile, membrane EPDM, toile coco, terre et clôture. Gratuit, réservé aux adultes, inscription obligatoire. À envisager : l’utilisateur souhaite conserver la date dans l’agenda mais attend avant de s’inscrire. Inscription : https://demarches.villeurbanne.fr/nature-en-ville-parcs-et-jardins/journees-ecovolontaires/. La MISPE envisagée se déroulerait du lundi 9 au vendredi 13 et du lundi 16 au vendredi 20 novembre, disponibilité après 16 h 45 ; cette activité du 25 novembre ne chevauche pas ces périodes."
     }
   ],
   "watch_items": [
