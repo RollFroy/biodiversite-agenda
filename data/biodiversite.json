@@ -7,18 +7,30 @@
       "id": "lpo-cen-ilots-loire-2026-09-02",
       "legacy_uid": "e6275db4-82d0-49ad-8f2a-b5f7a671e16b@openai.local",
       "title": "Chantier LPO/CEN – restauration des îlots de Loire",
-      "start": { "dateTime": "2026-09-02T10:00:00+02:00" },
-      "end": { "dateTime": "2026-09-02T17:00:00+02:00" },
+      "start": {
+        "dateTime": "2026-09-02T10:00:00+02:00"
+      },
+      "end": {
+        "dateTime": "2026-09-02T17:00:00+02:00"
+      },
       "location": "47,2477420, 0,2214600",
       "initial_label": "Participé",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
     },
     {
       "id": "lpo-ecole-ornithologie-donnery-2026-09",
       "legacy_uid": "c9f5649a-fca1-499c-8678-7732407ba07a@openai.local",
       "title": "École d’ornithologie LPO niveau 1 – Donnery",
-      "start": { "date": "2026-09-07" },
-      "end": { "date": "2026-09-12" },
+      "start": {
+        "date": "2026-09-07"
+      },
+      "end": {
+        "date": "2026-09-12"
+      },
       "location": "Donnery (45)",
       "initial_label": "Manqué",
       "type": "formation",
@@ -31,57 +43,101 @@
       "id": "fogefor-bfc-web-1-2026-09-15",
       "legacy_uid": "2a450709-3f8f-4328-82a2-9eed5a58a117@openai.local",
       "title": "FOGEFOR WEB BFC 1/4 – Forêt, filière et fonctionnement de l’arbre",
-      "start": { "dateTime": "2026-09-15T17:00:00+02:00" },
-      "end": { "dateTime": "2026-09-15T19:00:00+02:00" },
+      "start": {
+        "dateTime": "2026-09-15T17:00:00+02:00"
+      },
+      "end": {
+        "dateTime": "2026-09-15T19:00:00+02:00"
+      },
       "location": "En ligne",
       "initial_label": "Inscrit",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
     },
     {
       "id": "cnpf-problemes-sanitaires-essonne-2026-09-18",
       "legacy_uid": "1024ef35-b61e-46a8-a715-f819b0d8e42c@openai.local",
       "title": "CNPF – Problèmes sanitaires forestiers",
-      "start": { "date": "2026-09-18" },
-      "end": { "date": "2026-09-19" },
+      "start": {
+        "date": "2026-09-18"
+      },
+      "end": {
+        "date": "2026-09-19"
+      },
       "location": "Essonne (91)",
       "initial_label": "À surveiller",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
     },
     {
       "id": "fogefor-bfc-web-2-2026-09-18",
       "legacy_uid": "c450f514-a486-4f71-8d52-9b53908eae80@openai.local",
       "title": "FOGEFOR WEB BFC 2/4 – Peuplements et sylviculture",
-      "start": { "dateTime": "2026-09-18T17:00:00+02:00" },
-      "end": { "dateTime": "2026-09-18T19:00:00+02:00" },
+      "start": {
+        "dateTime": "2026-09-18T17:00:00+02:00"
+      },
+      "end": {
+        "dateTime": "2026-09-18T19:00:00+02:00"
+      },
       "location": "En ligne",
       "initial_label": "Inscrit",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
     },
     {
       "id": "fogefor-bfc-web-3-2026-09-23",
       "legacy_uid": "18fd55d6-7dbc-46a6-b105-5b208e671501@openai.local",
       "title": "FOGEFOR WEB BFC 3/4 – Fiscalité, cubage et vente",
-      "start": { "dateTime": "2026-09-23T17:00:00+02:00" },
-      "end": { "dateTime": "2026-09-23T19:00:00+02:00" },
+      "start": {
+        "dateTime": "2026-09-23T17:00:00+02:00"
+      },
+      "end": {
+        "dateTime": "2026-09-23T19:00:00+02:00"
+      },
       "location": "En ligne",
       "initial_label": "Inscrit",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
     },
     {
       "id": "fogefor-bfc-web-4-2026-09-25",
       "legacy_uid": "74e13d5b-9a22-425a-8710-32e8010473af@openai.local",
       "title": "FOGEFOR WEB BFC 4/4 – Gestion durable et biodiversité",
-      "start": { "dateTime": "2026-09-25T17:00:00+02:00" },
-      "end": { "dateTime": "2026-09-25T19:00:00+02:00" },
+      "start": {
+        "dateTime": "2026-09-25T17:00:00+02:00"
+      },
+      "end": {
+        "dateTime": "2026-09-25T19:00:00+02:00"
+      },
       "location": "En ligne",
       "initial_label": "Inscrit",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
     },
     {
       "id": "lpo-hibernaculum-dardilly-2026-09-30",
       "title": "LPO Rhône – création d’un hibernaculum",
-      "start": { "date": "2026-09-30" },
-      "end": { "date": "2026-10-01" },
+      "start": {
+        "date": "2026-09-30"
+      },
+      "end": {
+        "date": "2026-10-01"
+      },
       "location": "Dardilly (69)",
       "initial_label": "Participé",
       "type": "chantier_nature",
@@ -94,8 +150,12 @@
       "id": "lpo-noctules-tete-or-2026-10-01",
       "legacy_uid": "22557131-b5be-445a-b2a9-9454a2b2f515@openai.local",
       "title": "LPO Rhône – suivi chronologique des Noctules communes",
-      "start": { "date": "2026-10-01" },
-      "end": { "date": "2026-10-02" },
+      "start": {
+        "date": "2026-10-01"
+      },
+      "end": {
+        "date": "2026-10-02"
+      },
       "location": "Parc de la Tête-d’Or, Lyon",
       "initial_label": "Annulé",
       "type": "suivi_naturaliste",
@@ -107,8 +167,12 @@
     {
       "id": "arthropologia-recolte-moi-si-tu-peux-cloture-2026-10-03",
       "title": "ARTHROPOLOGIA – Récolte-moi si tu peux ! – séance de clôture",
-      "start": { "dateTime": "2026-10-03T09:30:00+02:00" },
-      "end": { "dateTime": "2026-10-03T12:30:00+02:00" },
+      "start": {
+        "dateTime": "2026-10-03T09:30:00+02:00"
+      },
+      "end": {
+        "dateTime": "2026-10-03T12:30:00+02:00"
+      },
       "location": "Écocentre du Lyonnais, 60 chemin du Jacquemet, 69890 La Tour-de-Salvagny",
       "initial_label": "Participé",
       "type": "atelier_naturaliste",
@@ -120,8 +184,12 @@
     {
       "id": "lpo-rhone-rencontre-eau-douce-2026-10-06",
       "title": "Rencontres LPO Rhône – Régénérer les cycles de l’eau douce pour des territoires résilients",
-      "start": { "dateTime": "2026-10-06T19:00:00+02:00" },
-      "end": { "dateTime": "2026-10-06T22:00:00+02:00" },
+      "start": {
+        "dateTime": "2026-10-06T19:00:00+02:00"
+      },
+      "end": {
+        "dateTime": "2026-10-06T22:00:00+02:00"
+      },
       "location": "Maison de l’Environnement, 14 avenue Tony-Garnier, Lyon 7e",
       "initial_label": "À envisager",
       "type": "rencontre_associative",
@@ -134,21 +202,71 @@
       "id": "fogefor-bfc-terrain-2026-11-05",
       "legacy_uid": "2d1ccfc0-0f77-4ec7-a24b-063942e2f564@openai.local",
       "title": "FOGEFOR BFC – journées terrain",
-      "start": { "date": "2026-11-05" },
-      "end": { "date": "2026-11-07" },
+      "start": {
+        "date": "2026-11-05"
+      },
+      "end": {
+        "date": "2026-11-07"
+      },
       "location": "Secteur d’Auxonne (21/39) – lieu précis à confirmer",
       "initial_label": "Inscrit",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
     },
     {
       "id": "reseau-rhone-saone-lones-2026-11-12",
       "legacy_uid": "700c53ea-ac4b-4dca-8178-16b37b8b94e5@openai.local",
       "title": "Rencontres réseau Rhône & Saône – restauration des lônes",
-      "start": { "date": "2026-11-12" },
-      "end": { "date": "2026-11-14" },
+      "start": {
+        "date": "2026-11-12"
+      },
+      "end": {
+        "date": "2026-11-14"
+      },
       "location": "Ambérieu-en-Bugey (01)",
       "initial_label": "À surveiller",
-      "managed_fields": ["start", "end", "location"]
+      "managed_fields": [
+        "start",
+        "end",
+        "location"
+      ]
+    },
+    {
+      "id": "reseau-blaireau-69-lancement-2026-11-16",
+      "title": "[INSCRIT] Réseau Blaireau 69 – réunion de lancement étude 2026–2027",
+      "start": {
+        "dateTime": "2026-11-16T18:00:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-11-16T21:00:00+01:00"
+      },
+      "location": "Maison de l’Environnement, salle Confluence, 14 avenue Tony-Garnier, 69007 Lyon (visioconférence possible)",
+      "initial_label": "Inscrit",
+      "type": "formation_suivi_naturaliste",
+      "priority": "haute",
+      "organizer": "FNE Rhône / Réseau Blaireau 69",
+      "source_url": "https://www.fne-aura.org/agenda/",
+      "description": "Réunion de lancement de l’étude Blaireau 2026-2027 : accueil à 18 h, réunion-information et formation dès 19 h. Inscription à l’étude effectuée, participation prévue. Du 12 au 16 novembre, possible MISPE en journée ; compatible avec disponibilité après 16 h 45 selon trajet."
+    },
+    {
+      "id": "ecole-eau-chartreuse-guiers-intro-2026-11-20",
+      "title": "[INSCRIT] École de l’eau Chartreuse-Guiers – conférence introductive",
+      "start": {
+        "dateTime": "2026-11-20T20:00:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-11-20T22:30:00+01:00"
+      },
+      "location": "Visioconférence ou SIAGA, 21 rue Follatière, Pont-de-Beauvoisin (38)",
+      "initial_label": "Inscrit",
+      "type": "formation",
+      "priority": "haute",
+      "organizer": "SIAGA / Les Amis du Parc de Chartreuse",
+      "source_url": "https://www.amis-chartreuse.org/spip.php?date_cal=2026-11-20&page=agenda",
+      "description": "Conférence inaugurale gratuite et accessible aux débutants, prérequis pour le parcours 2027. Inscription effectuée. Visioconférence possible et recommandée depuis Tarare ; suite du parcours entre février et mai 2027. Horaire compatible avec l’éventuelle MISPE."
     }
   ],
   "watch_items": [
