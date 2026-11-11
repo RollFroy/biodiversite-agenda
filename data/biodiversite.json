@@ -252,6 +252,23 @@
       ]
     },
     {
+      "id": "haies-inventaire-oiseaux-biol-2026-11-14",
+      "title": "Plantation et entretien de haies + inventaire ornithologique – Biol",
+      "start": {
+        "dateTime": "2026-11-14T09:30:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-11-14T17:00:00+01:00"
+      },
+      "location": "GAEC de la Mûre, 16 chemin de la Mûre, 38690 Biol (Isère)",
+      "initial_label": "À envisager",
+      "type": "chantier_nature",
+      "priority": "haute",
+      "organizer": "Collectif Si on plant’haies / APIE / LPO",
+      "source_url": "https://apie-asso.net/actu/plantation-de-haies-a-biol/",
+      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Entretien et plantation de haies, repas partagé, inventaire des oiseaux avec un technicien LPO. 9 h 30–17 h confirmés. Inscription/conditions et coût à confirmer auprès de l’organisateur ; aucune qualification préalable annoncée. Trajet depuis Tarare estimé à environ 1 h 30–1 h 50."
+    },
+    {
       "id": "reseau-blaireau-69-lancement-2026-11-16",
       "title": "[INSCRIT] Réseau Blaireau 69 – réunion de lancement étude 2026–2027",
       "start": {
@@ -284,6 +301,23 @@
       "organizer": "LPO Auvergne-Rhône-Alpes",
       "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
       "description": "Webinaire présentant le protocole national de suivi des amphibiens. Inscription effectuée. Horaire confirmé par l’utilisateur via la fiche LPO ; compatible avec la MISPE finissant à 16 h 45."
+    },
+    {
+      "id": "fne-rhone-soiree-aquacrypta-2026-11-19",
+      "title": "FNE Rhône – Soirée bilan AquaCrypta (inventaires zones humides)",
+      "start": {
+        "dateTime": "2026-11-19T18:00:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-11-19T21:00:00+01:00"
+      },
+      "location": "LIEU À CONFIRMER : fiche HelloAsso : 22 rue Édouard-Aynard, 69100 Villeurbanne ; intitulé « Maison de l’environnement, salle Confluence » (autre site à Lyon 7e)",
+      "initial_label": "À envisager",
+      "type": "rencontre_naturaliste",
+      "priority": "haute",
+      "organizer": "FNE Rhône",
+      "source_url": "https://www.helloasso.com/associations/fne-rhone/evenements/soiree-de-cloture-aquacrypta-saison-2026",
+      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Résultats 2026 du projet de sciences participatives sur les zones humides : libellules, donacies/coléoptères aquatiques et characées ; rencontres bénévoles et préparation de la saison suivante. 18 h–21 h confirmés. Gratuit avec participation à prix libre ; ouvert à tous. Attention : le nom du lieu et l’adresse de la fiche HelloAsso semblent contradictoires : confirmer auprès de FNE Rhône avant déplacement. En période de MISPE possible : disponible après 16 h 45, trajet depuis Tarare à anticiper."
     },
     {
       "id": "ecole-eau-chartreuse-guiers-intro-2026-11-20",
@@ -320,21 +354,72 @@
       "description": "Webinaire présentant le protocole national de suivi des reptiles. Inscription effectuée. Horaire confirmé par l’utilisateur via la fiche LPO."
     },
     {
-      "id": "villeurbanne-mare-ancien-cimetiere-2026-11-25",
-      "title": "Création d’une mare – ancien cimetière de Villeurbanne (LPO AuRA)",
+      "id": "lpo-rhone-mare-sainte-catherine-2026-11-28",
+      "title": "LPO Rhône – Chantier à la ferme : création d’une mare",
       "start": {
-        "dateTime": "2026-11-25T09:00:00+01:00"
+        "date": "2026-11-28"
       },
       "end": {
-        "dateTime": "2026-11-25T17:00:00+01:00"
+        "date": "2026-11-29"
       },
-      "location": "Ancien cimetière de Villeurbanne, 1 rue du Cimetière, 69100 Villeurbanne",
+      "location": "Sainte-Catherine (69), lieu de rendez-vous à confirmer",
       "initial_label": "À envisager",
       "type": "chantier_nature",
       "priority": "haute",
-      "organizer": "Ville de Villeurbanne / LPO Auvergne-Rhône-Alpes",
-      "source_url": "https://openagenda.com/fr/villeurbanne/events/20258613_creation-dune-mare-refuge-pour-la-biodiversite",
-      "description": "Chantier participatif de création d’une mare dans le cadre du Refuge LPO : creusage manuel, géotextile, membrane EPDM, toile coco, terre et clôture. Gratuit, réservé aux adultes, inscription obligatoire. À envisager : l’utilisateur souhaite conserver la date dans l’agenda mais attend avant de s’inscrire. Inscription : https://demarches.villeurbanne.fr/nature-en-ville-parcs-et-jardins/journees-ecovolontaires/. La MISPE envisagée se déroulerait du lundi 9 au vendredi 13 et du lundi 16 au vendredi 20 novembre, disponibilité après 16 h 45 ; cette activité du 25 novembre ne chevauche pas ces périodes."
+      "organizer": "LPO Auvergne-Rhône-Alpes – Rhône",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/rhone/agenda/?jsf=jet-engine%3Acombined-events&meta=type-activite%3AChantier",
+      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. La LPO confirme le samedi 28 novembre 2026 à Sainte-Catherine (69). Horaire, durée, tarif, prérequis et modalités d’inscription NON CONFIRMÉS : entrée provisoirement sur la journée entière, ce qui ne signifie pas un chantier d’une journée complète. Intérêt : création d'une mare en milieu agricole ; environ 1 h–1 h 15 de voiture depuis Tarare."
+    },
+    {
+      "id": "lpo-loire-milan-royal-roche-la-moliere-2026-12-02",
+      "title": "LPO Loire – Suivi bénévole du dortoir hivernal de Milan royal",
+      "start": {
+        "date": "2026-12-02"
+      },
+      "end": {
+        "date": "2026-12-03"
+      },
+      "location": "Roche-la-Molière (42), point de rendez-vous à confirmer",
+      "initial_label": "À envisager",
+      "type": "suivi_naturaliste",
+      "priority": "haute",
+      "organizer": "LPO Auvergne-Rhône-Alpes – Loire",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
+      "description": "Date du mercredi 2 décembre 2026 confirmée par l’agenda LPO Loire, choisie par l’utilisateur. PAS ENCORE INSCRIT. Suivi ornithologique d’un dortoir de Milan royal ; créneau exact et consignes d’inscription à confirmer auprès de la LPO. Entrée provisoirement sur la journée entière (durée annoncée antérieurement ~2 h, non vérifiée pour cette séance). Attention : réunion bilan Rapaces nocturnes de la Loire le même jour à Saint-Étienne, chevauchement possible. Trajet depuis Tarare estimé à ~1 h 15–1 h 30."
+    },
+    {
+      "id": "lpo-loire-bilan-rapaces-nocturnes-2026-12-02",
+      "title": "LPO Loire – Réunion bilan « Rapaces nocturnes de la Loire »",
+      "start": {
+        "date": "2026-12-02"
+      },
+      "end": {
+        "date": "2026-12-03"
+      },
+      "location": "Saint-Étienne (42), adresse à confirmer",
+      "initial_label": "À envisager",
+      "type": "rencontre_naturaliste",
+      "priority": "normale",
+      "organizer": "LPO Auvergne-Rhône-Alpes – Loire",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
+      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Date du mercredi 2 décembre 2026 confirmée par la LPO ; horaire, durée, accès des débutants, coût et inscription à confirmer. Entrée provisoirement sur la journée entière. Attention au suivi Milan royal programmé le même jour à Roche-la-Molière ; vérifier la compatibilité des horaires avant de s’engager."
+    },
+    {
+      "id": "lpo-rhone-mare-sonneur-cublize-2026-12-05",
+      "title": "LPO Rhône – Chantier mare pour le Sonneur à ventre jaune",
+      "start": {
+        "date": "2026-12-05"
+      },
+      "end": {
+        "date": "2026-12-06"
+      },
+      "location": "Cublize (69), lieu exact à confirmer",
+      "initial_label": "À envisager",
+      "type": "chantier_nature",
+      "priority": "haute",
+      "organizer": "LPO Auvergne-Rhône-Alpes – Rhône",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/rhone/agenda/?jsf=jet-engine%3Acombined-events&meta=type-activite%3AChantier",
+      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Chantier en faveur du Sonneur à ventre jaune à Cublize, samedi 5 décembre 2026, date confirmée sur l’agenda LPO Rhône. Horaires, durée, inscription, prix et prérequis à confirmer : entrée provisoirement sur la journée entière. Trajet depuis Tarare ~25–35 minutes."
     }
   ],
   "watch_items": [
