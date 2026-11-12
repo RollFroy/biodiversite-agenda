@@ -311,13 +311,13 @@
       "end": {
         "dateTime": "2026-11-19T21:00:00+01:00"
       },
-      "location": "LIEU À CONFIRMER : fiche HelloAsso : 22 rue Édouard-Aynard, 69100 Villeurbanne ; intitulé « Maison de l’environnement, salle Confluence » (autre site à Lyon 7e)",
+      "location": "Maison de l’Environnement et de la Métropole de Lyon, salle Confluence, 14 avenue Tony-Garnier, 69007 Lyon",
       "initial_label": "À envisager",
       "type": "rencontre_naturaliste",
       "priority": "haute",
       "organizer": "FNE Rhône",
       "source_url": "https://www.helloasso.com/associations/fne-rhone/evenements/soiree-de-cloture-aquacrypta-saison-2026",
-      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Résultats 2026 du projet de sciences participatives sur les zones humides : libellules, donacies/coléoptères aquatiques et characées ; rencontres bénévoles et préparation de la saison suivante. 18 h–21 h confirmés. Gratuit avec participation à prix libre ; ouvert à tous. Attention : le nom du lieu et l’adresse de la fiche HelloAsso semblent contradictoires : confirmer auprès de FNE Rhône avant déplacement. En période de MISPE possible : disponible après 16 h 45, trajet depuis Tarare à anticiper."
+      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Résultats 2026 du projet de sciences participatives sur les zones humides : libellules, donacies/coléoptères aquatiques et characées ; rencontres bénévoles et préparation de la saison suivante. 18 h–21 h confirmés. Gratuit avec participation à prix libre ; ouvert à tous. Lieu confirmé : Maison de l’Environnement et de la Métropole de Lyon, salle Confluence, 14 avenue Tony-Garnier, 69007 Lyon. L'adresse de Villeurbanne indiquée auparavant sur HelloAsso était celle de FNE Rhône, pas le lieu de réunion. En période de MISPE possible : disponible après 16 h 45, trajet depuis Tarare à anticiper."
     },
     {
       "id": "ecole-eau-chartreuse-guiers-intro-2026-11-20",
@@ -385,24 +385,24 @@
       "priority": "haute",
       "organizer": "LPO Auvergne-Rhône-Alpes – Loire",
       "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
-      "description": "Date du mercredi 2 décembre 2026 confirmée par l’agenda LPO Loire, choisie par l’utilisateur. PAS ENCORE INSCRIT. Suivi ornithologique d’un dortoir de Milan royal ; créneau exact et consignes d’inscription à confirmer auprès de la LPO. Entrée provisoirement sur la journée entière (durée annoncée antérieurement ~2 h, non vérifiée pour cette séance). Attention : réunion bilan Rapaces nocturnes de la Loire le même jour à Saint-Étienne, chevauchement possible. Trajet depuis Tarare estimé à ~1 h 15–1 h 30."
+      "description": "Date du mercredi 2 décembre 2026 confirmée par l’agenda LPO Loire, choisie par l’utilisateur. PAS ENCORE INSCRIT. Suivi ornithologique d’un dortoir de Milan royal ; fin du suivi au coucher du soleil, vers 17 h 00 le 2 décembre ; heure de début et consignes d’inscription à confirmer auprès de la LPO. Entrée provisoirement sur la journée entière faute d’heure de début vérifiée : la séance ne dure pas toute la journée. Après le suivi, trajet d’environ 20 minutes vers Saint-Étienne, avec marge pour rangement, puis réunion Rapaces nocturnes de la Loire à 18 h 30 à la Maison de la Nature : les deux activités sont compatibles. Trajet depuis Tarare estimé à ~1 h 15–1 h 30."
     },
     {
       "id": "lpo-loire-bilan-rapaces-nocturnes-2026-12-02",
       "title": "LPO Loire – Réunion bilan « Rapaces nocturnes de la Loire »",
       "start": {
-        "date": "2026-12-02"
+        "dateTime": "2026-12-02T18:30:00+01:00"
       },
       "end": {
-        "date": "2026-12-03"
+        "dateTime": "2026-12-02T20:30:00+01:00"
       },
-      "location": "Saint-Étienne (42), adresse à confirmer",
+      "location": "Maison de la Nature, Saint-Étienne (42) — adresse précise à confirmer",
       "initial_label": "À envisager",
       "type": "rencontre_naturaliste",
       "priority": "normale",
       "organizer": "LPO Auvergne-Rhône-Alpes – Loire",
       "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
-      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Date du mercredi 2 décembre 2026 confirmée par la LPO ; horaire, durée, accès des débutants, coût et inscription à confirmer. Entrée provisoirement sur la journée entière. Attention au suivi Milan royal programmé le même jour à Roche-la-Molière ; vérifier la compatibilité des horaires avant de s’engager."
+      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Date du mercredi 2 décembre 2026 confirmée par la LPO ; début confirmé à 18 h 30 à la Maison de la Nature de Saint-Étienne. Heure de fin 20 h 30 PROVISOIRE uniquement pour l’affichage agenda ; durée exacte, accès des débutants, coût et inscription à confirmer. Compatible avec le suivi Milan royal se terminant vers 17 h à Roche-la-Molière (20 minutes de trajet environ, marge pour rangement)."
     },
     {
       "id": "lpo-rhone-mare-sonneur-cublize-2026-12-05",
