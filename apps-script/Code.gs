@@ -85,7 +85,7 @@ function runSync_(dryRun) {
       return;
     }
 
-    const patchResult = buildPatch_(sourceEvent, existing);
+    const patchResult = buildPatch_(sourceEvent, existing, labels);
 
     if (patchResult.changedFields.length === 0) {
       stats.unchanged++;
@@ -306,7 +306,7 @@ function createManagedEvent_(calendarId, sourceEvent, labels) {
     summary: sourceEvent.title,
     start: normalizeDateEndpoint_(sourceEvent.start),
     end: normalizeDateEndpoint_(sourceEvent.end),
-    description: buildManagedDescription_(sourceEvent, ''),
+    description: buildManagedDescription_(sourceEvent, '', initialLabel),
     extendedProperties: { private: {} },
     eventLabelId: labels[initialLabel].id,
   };
@@ -321,7 +321,7 @@ function createManagedEvent_(calendarId, sourceEvent, labels) {
   });
 }
 
-function buildPatch_(sourceEvent, existing) {
+function buildPatch_(sourceEvent, existing, labels) {
   const resource = {};
   const changedFields = [];
   const managed = new Set(
@@ -358,15 +358,26 @@ function buildPatch_(sourceEvent, existing) {
     }
   }
 
-  if (managed.has('description')) {
-    const desiredDescription = buildManagedDescription_(
-      sourceEvent,
-      existing.description || ''
-    );
-    if ((existing.description || '') !== desiredDescription) {
-      resource.description = desiredDescription;
-      changedFields.push('informations veille');
-    }
+  // Le libellé réellement attribué à l'événement dans Google Agenda
+  // prime sur le libellé initial du JSON (qui n'est qu'une valeur par défaut).
+  const currentStatus =
+    Object.keys(labels).find(name =>
+      labels[name].id === existing.eventLabelId
+    ) || sourceEvent.initial_label || 'À surveiller';
+
+  // Le statut reste lisible dans les notes personnelles, même lorsque le
+  // champ "description" est exclu des champs gérés (événements historiques).
+  const desiredDescription = managed.has('description')
+    ? buildManagedDescription_(
+        sourceEvent,
+        existing.description || '',
+        currentStatus
+      )
+    : ensurePersonalStatus_(existing.description || '', currentStatus);
+
+  if ((existing.description || '') !== desiredDescription) {
+    resource.description = desiredDescription;
+    changedFields.push('statut dans les commentaires');
   }
 
   return { resource, changedFields };
@@ -410,7 +421,7 @@ function isEnded_(event) {
   return false;
 }
 
-function buildManagedDescription_(sourceEvent, currentDescription) {
+function buildManagedDescription_(sourceEvent, currentDescription, status) {
   const lines = [CONFIG.managedInfoHeader];
 
   if (sourceEvent.type) lines.push('Type : ' + sourceEvent.type);
@@ -422,13 +433,33 @@ function buildManagedDescription_(sourceEvent, currentDescription) {
     lines.push(sourceEvent.description);
   }
 
-  const personalNotes = extractPersonalNotes_(currentDescription);
-
-  return (
+  return ensurePersonalStatus_(
     lines.join('\n').trimEnd() +
-    '\n\n' + CONFIG.personalNotesMarker +
-    (personalNotes ? '\n' + personalNotes : '')
+      '\n\n' + CONFIG.personalNotesMarker +
+      (extractPersonalNotes_(currentDescription)
+        ? '\n' + extractPersonalNotes_(currentDescription)
+        : ''),
+    status
   );
+}
+
+// Place le statut sous « Notes personnelles », sans supprimer les
+// annotations saisies dans Google Agenda. Si un ancien statut est déjà
+// inscrit en première ligne, il est remplacé (pas de doublon).
+function ensurePersonalStatus_(description, status) {
+  const marker = CONFIG.personalNotesMarker;
+  const index = description.indexOf(marker);
+  const base = index === -1
+    ? description.trimEnd()
+    : description.slice(0, index).trimEnd();
+  const notes = index === -1 ? '' : extractPersonalNotes_(description);
+  const otherNotes = notes
+    .replace(/^Statut\\s*:[^\\r\\n]*(?:\\r?\\n|$)/i, '')
+    .trim();
+
+  return base + (base ? '\n\n' : '') +
+    marker + '\nStatut : ' + status +
+    (otherNotes ? '\n' + otherNotes : '');
 }
 
 function extractPersonalNotes_(description) {
