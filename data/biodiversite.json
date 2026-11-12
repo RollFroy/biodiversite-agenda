@@ -374,10 +374,10 @@
       "id": "lpo-loire-milan-royal-roche-la-moliere-2026-12-02",
       "title": "LPO Loire – Suivi bénévole du dortoir hivernal de Milan royal",
       "start": {
-        "date": "2026-12-02"
+        "dateTime": "2026-12-02T15:00:00+01:00"
       },
       "end": {
-        "date": "2026-12-03"
+        "dateTime": "2026-12-02T17:00:00+01:00"
       },
       "location": "Roche-la-Molière (42), point de rendez-vous à confirmer",
       "initial_label": "À envisager",
@@ -385,7 +385,7 @@
       "priority": "haute",
       "organizer": "LPO Auvergne-Rhône-Alpes – Loire",
       "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/loire/agenda/",
-      "description": "Date du mercredi 2 décembre 2026 confirmée par l’agenda LPO Loire, choisie par l’utilisateur. PAS ENCORE INSCRIT. Suivi ornithologique d’un dortoir de Milan royal ; fin du suivi au coucher du soleil, vers 17 h 00 le 2 décembre ; heure de début et consignes d’inscription à confirmer auprès de la LPO. Entrée provisoirement sur la journée entière faute d’heure de début vérifiée : la séance ne dure pas toute la journée. Après le suivi, trajet d’environ 20 minutes vers Saint-Étienne, avec marge pour rangement, puis réunion Rapaces nocturnes de la Loire à 18 h 30 à la Maison de la Nature : les deux activités sont compatibles. Trajet depuis Tarare estimé à ~1 h 15–1 h 30."
+      "description": "Date du mercredi 2 décembre 2026 confirmée par l’agenda LPO Loire, choisie par l’utilisateur. PAS ENCORE INSCRIT. Suivi ornithologique d’un dortoir de Milan royal ; suivi de 15 h 00 à 17 h 00 (début 2 h avant le coucher du soleil), conformément au bloc #activite-date de la fiche LPO. Consignes d’inscription à confirmer auprès de la LPO. Après le suivi, trajet d’environ 20 minutes vers Saint-Étienne, avec marge pour rangement, puis réunion Rapaces nocturnes de la Loire à 18 h 30 à la Maison de la Nature : les deux activités sont compatibles. Trajet depuis Tarare estimé à ~1 h 15–1 h 30."
     },
     {
       "id": "lpo-loire-bilan-rapaces-nocturnes-2026-12-02",
