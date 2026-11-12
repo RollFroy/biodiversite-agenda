@@ -454,7 +454,7 @@ function ensurePersonalStatus_(description, status) {
     : description.slice(0, index).trimEnd();
   const notes = index === -1 ? '' : extractPersonalNotes_(description);
   const otherNotes = notes
-    .replace(/^Statut\\s*:[^\\r\\n]*(?:\\r?\\n|$)/i, '')
+    .replace(/^Statut\s*:[^\r\n]*(?:\r?\n|$)/i, '')
     .trim();
 
   return base + (base ? '\n\n' : '') +
