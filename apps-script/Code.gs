@@ -81,7 +81,32 @@ function runSync_(dryRun) {
 
     if (isEnded_(existing)) {
       stats.past++;
-      console.log('[IGNORÉ — PASSÉ] ' + existing.summary + ' (' + sourceEvent.id + ')');
+      // Pour les événements passés, synchroniser seulement la ligne « Statut »
+      // dans les notes personnelles, sans toucher à leurs dates ou titres.
+      const pastStatus =
+        Object.keys(labels).find(name =>
+          labels[name].id === existing.eventLabelId
+        ) || sourceEvent.initial_label || 'À surveiller';
+      const pastDescription = ensurePersonalStatus_(
+        existing.description || '', pastStatus
+      );
+
+      if ((existing.description || '') !== pastDescription) {
+        stats.update++;
+        if (dryRun) {
+          console.log('[PASSÉ — AJOUTER STATUT] ' + existing.summary);
+        } else {
+          Calendar.Events.patch(
+            { description: pastDescription },
+            calendar.id,
+            existing.id,
+            { sendUpdates: 'none' }
+          );
+          console.log('[PASSÉ — STATUT AJOUTÉ] ' + existing.summary);
+        }
+      } else {
+        console.log('[PASSÉ — STATUT PRÉSENT] ' + existing.summary);
+      }
       return;
     }
 
@@ -115,7 +140,7 @@ function runSync_(dryRun) {
     ', créations: ' + stats.create +
     ', mises à jour: ' + stats.update +
     ', identiques: ' + stats.unchanged +
-    ', passés ignorés: ' + stats.past + '.'
+    ', passés examinés: ' + stats.past + '.'
   );
 }
 
