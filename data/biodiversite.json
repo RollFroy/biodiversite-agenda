@@ -357,18 +357,22 @@
       "id": "lpo-rhone-mare-sainte-catherine-2026-11-28",
       "title": "LPO Rhône – Chantier à la ferme : création d’une mare",
       "start": {
-        "date": "2026-11-28"
+        "dateTime": "2026-11-28T09:00:00+01:00"
       },
       "end": {
-        "date": "2026-11-29"
+        "dateTime": "2026-11-28T16:00:00+01:00"
       },
       "location": "Sainte-Catherine (69), lieu de rendez-vous à confirmer",
-      "initial_label": "À envisager",
+      "initial_label": "Inscrit",
       "type": "chantier_nature",
       "priority": "haute",
       "organizer": "LPO Auvergne-Rhône-Alpes – Rhône",
-      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/rhone/agenda/?jsf=jet-engine%3Acombined-events&meta=type-activite%3AChantier",
-      "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. La LPO confirme le samedi 28 novembre 2026 à Sainte-Catherine (69). Horaire, durée, tarif, prérequis et modalités d’inscription NON CONFIRMÉS : entrée provisoirement sur la journée entière, ce qui ne signifie pas un chantier d’une journée complète. Intérêt : création d'une mare en milieu agricole ; environ 1 h–1 h 15 de voiture depuis Tarare."
+      "source_url": "https://www.jagispourlanature.org/activite/chantier-la-ferme-creation-dune-mare",
+      "description": "Inscription confirmée par l’utilisateur le 23 novembre 2026. Chantier bénévole de création d’une mare en milieu agricole à Sainte-Catherine (Rhône), samedi 28 novembre de 9 h à 16 h. Prendre des gants, vêtements de terrain et de quoi contribuer au repas partagé ; outils à confirmer. Engagement confirmé, statut souhaité : Inscrit. En cas de libellé À envisager déjà présent dans Google Agenda, appliquer une seule fois sa transition vers Inscrit.",
+      "label_transition": {
+        "from": "À envisager",
+        "to": "Inscrit"
+      }
     },
     {
       "id": "lpo-loire-milan-royal-roche-la-moliere-2026-12-02",
@@ -420,6 +424,40 @@
       "organizer": "LPO Auvergne-Rhône-Alpes – Rhône",
       "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/rhone/agenda/?jsf=jet-engine%3Acombined-events&meta=type-activite%3AChantier",
       "description": "Sélectionné pour ajout à l’agenda À envisager ; PAS ENCORE INSCRIT. Chantier en faveur du Sonneur à ventre jaune à Cublize, samedi 5 décembre 2026, date confirmée sur l’agenda LPO Rhône. Horaires, durée, inscription, prix et prérequis à confirmer : entrée provisoirement sur la journée entière. Trajet depuis Tarare ~25–35 minutes."
+    },
+    {
+      "id": "lpo-rhone-grand-duc-monts-or-2026-12-05",
+      "title": "LPO Rhône – Recherche du Grand-duc d’Europe // Monts d’Or",
+      "start": {
+        "date": "2026-12-05"
+      },
+      "end": {
+        "date": "2026-12-06"
+      },
+      "location": "Secteur Couzon-au-Mont-d’Or (69) ; rendez-vous exact à confirmer",
+      "initial_label": "À envisager",
+      "type": "sortie_naturaliste",
+      "priority": "haute",
+      "organizer": "LPO Auvergne-Rhône-Alpes – Rhône",
+      "source_url": "https://auvergne-rhone-alpes.lpo.fr/lpo-locales/rhone/agenda/",
+      "description": "À envisager, PAS ENCORE INSCRIT. Recherche de Grand-duc d'Europe dans les Monts d'Or le samedi 5 décembre 2026, secteur Couzon-au-Mont-d'Or. Heure de début, heure de fin, tarif, équipement et inscription à confirmer sur la fiche détaillée LPO (#activite-date). Entrée provisoirement sur la journée entière, ce qui ne signifie pas une sortie de toute une journée. Prioritaire sur le chantier de mare de Cublize du 5 décembre, annoncé annulé."
+    },
+    {
+      "id": "nature-vivante-vesciat-chiro-2026-12-12",
+      "title": "Nature Vivante – Chantier chiroptères, carrière de la Vesciat",
+      "start": {
+        "dateTime": "2026-12-12T08:30:00+01:00"
+      },
+      "end": {
+        "dateTime": "2026-12-12T15:30:00+01:00"
+      },
+      "location": "Rendez-vous : Espace Saint-Germain, 30 avenue Général-Leclerc, 38200 Vienne ; chantier à Ville-sous-Anjou (38)",
+      "initial_label": "À envisager",
+      "type": "chantier_nature",
+      "priority": "haute",
+      "organizer": "Nature Vivante",
+      "source_url": "https://nature-vivante.fr/events/",
+      "description": "À envisager (prioritaire), PAS ENCORE INSCRIT. Journée éco-citoyenne de préservation de la carrière de la Vesciat, refuge de chauves-souris, le 12 décembre 2026 de 8 h 30 à 15 h 30 ; rendez-vous annoncé à l’Espace Saint-Germain de Vienne. Prévoir pique-nique et vêtements de travail. Contacter Nature Vivante pour confirmer possibilité de participer, nécessité d'adhésion et présence d’explications naturalistes. L’utilisateur privilégie ce chantier malgré le trajet depuis Tarare (~1 h 15 à 1 h 35 jusqu'à Vienne)."
     }
   ],
   "watch_items": [
