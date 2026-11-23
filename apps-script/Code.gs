@@ -124,11 +124,15 @@ function runSync_(dryRun) {
     if (dryRun) {
       console.log('[METTRE À JOUR] ' + existing.summary + ' — ' + fields);
     } else {
+      const patchOptions = { sendUpdates: 'none' };
+      if (patchResult.changedFields.includes('libellé de statut')) {
+        patchOptions.eventLabelVersion = 1;
+      }
       Calendar.Events.patch(
         patchResult.resource,
         calendar.id,
         existing.id,
-        { sendUpdates: 'none' }
+        patchOptions
       );
       console.log('[MIS À JOUR] ' + existing.summary + ' — ' + fields);
     }
@@ -242,6 +246,18 @@ function validateData_(data, labels) {
     const initialLabel = event.initial_label || 'À surveiller';
     if (!labels[initialLabel]) {
       throw new Error(prefix + ' : initial_label inconnu : ' + initialLabel);
+    }
+
+    // Transition ponctuelle demandée explicitement par l’utilisateur. Ne
+    // jamais écraser ensuite une modification manuelle dans Google Agenda.
+    if (event.label_transition) {
+      const t = event.label_transition;
+      if (!t.from || !t.to || !labels[t.from] || !labels[t.to]) {
+        throw new Error(prefix + ' : label_transition invalide.');
+      }
+      if (event.initial_label !== t.to) {
+        throw new Error(prefix + ' : initial_label doit être égal à label_transition.to.');
+      }
     }
 
     if (event.managed_fields) {
@@ -383,12 +399,19 @@ function buildPatch_(sourceEvent, existing, labels) {
     }
   }
 
-  // Le libellé réellement attribué à l'événement dans Google Agenda
-  // prime sur le libellé initial du JSON (qui n'est qu'une valeur par défaut).
+  // Le libellé de Google Agenda reste prioritaire. Exception : une transition
+  // ponctuelle explicite, appliquée uniquement si le statut est encore 'from'.
   const currentStatus =
     Object.keys(labels).find(name =>
       labels[name].id === existing.eventLabelId
     ) || sourceEvent.initial_label || 'À surveiller';
+  const transition = sourceEvent.label_transition;
+  const applyTransition = transition && currentStatus === transition.from;
+  const effectiveStatus = applyTransition ? transition.to : currentStatus;
+  if (applyTransition) {
+    resource.eventLabelId = labels[transition.to].id;
+    changedFields.push('libellé de statut');
+  }
 
   // Le statut reste lisible dans les notes personnelles, même lorsque le
   // champ "description" est exclu des champs gérés (événements historiques).
@@ -396,9 +419,9 @@ function buildPatch_(sourceEvent, existing, labels) {
     ? buildManagedDescription_(
         sourceEvent,
         existing.description || '',
-        currentStatus
+        effectiveStatus
       )
-    : ensurePersonalStatus_(existing.description || '', currentStatus);
+    : ensurePersonalStatus_(existing.description || '', effectiveStatus);
 
   if ((existing.description || '') !== desiredDescription) {
     resource.description = desiredDescription;
